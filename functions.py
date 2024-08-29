@@ -1,7 +1,7 @@
 import streamlit as st
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-import cv2
+#import cv2
 import numpy as np
 import imutils
 import os
@@ -11,7 +11,7 @@ from datetime import datetime
 from getpass import getuser
 import supervision as sv
 from PIL import Image
-from PIL import ImageTk
+
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
 
