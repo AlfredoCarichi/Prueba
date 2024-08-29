@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 import imutils
 
 
-#from functions import *
+from functions import *
 
 def main():
     
