@@ -42,13 +42,13 @@ def main():
         
 
         st.image(image)
-        #datos = deteccion(image)
+        datos = deteccion(image)
         st.markdown('La paleta de colores original fue modificada para poder observar las detecciones de mejor manera. Valores azules representan valores bajos de NDVI')
-        #st.image(deteccion((image)))
+        st.image(deteccion((image)))
 
-        #st.markdown(deteccion2((image)) + ' anomalías de NDVI detectadas')
+        st.markdown(deteccion2((image)) + ' anomalías de NDVI detectadas')
 
-        #st.image(histograma(image_cv2))
+        st.image(histograma(image_cv2))
 
 
 if __name__ == "__main__":
