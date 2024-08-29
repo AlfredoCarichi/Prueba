@@ -28,23 +28,6 @@ import matplotlib.pyplot as plt
 import imutils
 
 
-
-
-def histograma(image):
-    canales = cv2.split(image)
-    colores = ('b','g','r')
-    plt.figure()
-    plt.title('Histograma de colores')
-    plt.xlabel('Bits')
-    plt.ylabel('# Píxeles')
-    for (canal,color) in zip(canales,colores):
-        hist = cv2.calcHist([canal],[0],None,[256],[0,256])
-        plt.plot(hist,color=color)
-        plt.xlim([0,256])
-    plt.show()
-
-
-
 def deteccion(image):
     user = getuser()
     print(user)
@@ -144,47 +127,3 @@ def deteccion2(image):
 
 
 
-def sobel():
-    global image
-    gray = image
-    flotante = gray.astype(float)
-    ker1 = np.array([-0.5,0,0.5])
-    ker2 = np.array([[-0.5],[0],[0.5]])
-    DX = cv2.filter2D(flotante,-1,ker1)
-    DY = cv2.filter2D(flotante,-1,ker2)
-    magx = DX**2+DY**2
-    magx = np.sqrt(magx)
-    magx = magx/np.max(magx)
-    maska = np.where(magx>0.1,255,0)
-    maska = np.uint8(maska)
-    cv2.imshow('Sobel',maska)
-
-def canny():
-    global image
-    bordes = cv2.Canny(image,30,90)
-    ret, binaria = cv2.threshold(bordes,50,255,cv2.THRESH_BINARY_INV)
-    contornos,jerarquia = cv2.findContours(binaria, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    bordecannenot = cv2.bitwise_not(bordes)
-    cv2.imshow('contornos',binaria)
-
-def transformada():
-    global image
-    Nf = 512
-    Nc = 512
-    imagentrans = cv2.resize(image,(Nc,Nf))
-    flotante = np.float64(imagentrans)
-    fu = np.fft.fft2(flotante)
-    fu = np.fft.fftshift(fu)
-    abs = np.abs(fu)
-    log = 20*np.log10(abs)
-    B1 = np.arange(-Nf/2+1,Nf/2+1,1)
-    B2 = np.arange(-Nc/2+1,Nc/2+1,1)
-    [X,Y] = np.meshgrid(B1,B2)
-    P = np.sqrt(X**2+Y**2)
-    P = P/np.max(P)
-    corte = 0.05
-    jkl = np.zeros((Nf,Nc))
-    for i in range(Nf):
-        for u in range(Nc):
-            if(P[i,u]<corte):
-                jkl[i,u] = 1
