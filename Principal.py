@@ -1,8 +1,8 @@
 import streamlit as st
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-import cv2
-import numpy as np
+
+
 import imutils
 import os
 from os import mkdir
@@ -23,49 +23,13 @@ from PIL import Image
 from PIL import ImageTk
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-import cv2
-import numpy as np
+
+
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
 import imutils
 
-#Librerias del segundo proceso
-import rasterio
-import geopandas as gpd
-import numpy as np
-from matplotlib import pyplot as plt
-import cv2
-from rasterio.features import rasterize
-from rasterio.windows import Window
-from rasterio.plot import show
-import os
-from shapely.geometry import box
-from shapely.ops import unary_union
-import json
-from shapely.geometry import shape
-from shapely.geometry import Polygon
-from shapely.geometry import MultiPolygon
-from shapely.ops import unary_union
-import shapely
-import math
-import pandas as pd
-from skimage import io
-from skimage.io import imsave
-from sklearn import model_selection
-import os
-import shutil
-import json
-import ast
-import numpy as np
-from tqdm import tqdm
-import pandas as  pd
-import seaborn as sns
-import fastai.vision as vision
-import xml.etree.ElementTree as ET
-import glob
-from shapely.geometry import Polygon
-from shutil import rmtree
-from PIL import Image
+
 from functions import *
 
 def main():
@@ -77,7 +41,7 @@ def main():
     if file_uploader is not None:
         image = Image.open(file_uploader)
         print(image)
-        image_cv2 = np.array(image)
+        
 
         st.image(image)
         datos = deteccion(image)
