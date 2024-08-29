@@ -14,16 +14,14 @@ from PIL import Image
 from PIL import ImageTk
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
-from tkinter import *
-from tkinter import filedialog
 
-from tkinter import *
-from tkinter import filedialog
+
+
 from PIL import Image
-from PIL import ImageTk
+
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-import cv2
+
 import numpy as np
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
