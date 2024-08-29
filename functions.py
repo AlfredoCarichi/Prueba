@@ -1,7 +1,7 @@
 import streamlit as st
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-#import cv2
+import cv2
 import numpy as np
 import imutils
 import os
@@ -30,9 +30,9 @@ import imutils
 
 def deteccion(image):
     user = getuser()
-    print(user)
+    
 
-    f = open("Registros.txt","a")
+    
 
     now = datetime.now()
     now2 = datetime.today()
@@ -69,9 +69,8 @@ def deteccion(image):
     #cv2.imwrite(filename, haber)
     #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
     #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
-    f.write("\n--------Fecha del analisis : " + fecha2 + " Anomalías: " + leng2)
-    f.close()
-    img_conv = Image.fromarray(haber)
+    
+    
     
     return haber
 
@@ -79,9 +78,9 @@ def deteccion(image):
 
 def deteccion2(image):
     user = getuser()
-    print(user)
+    
 
-    f = open("Registros.txt","a")
+    
 
     now = datetime.now()
     now2 = datetime.today()
@@ -118,9 +117,7 @@ def deteccion2(image):
     #cv2.imwrite(filename, haber)
     #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
     #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
-    f.write("\n--------Fecha del analisis : " + fecha2 + " Anomalías: " + leng2)
-    f.close()
-    img_conv = Image.fromarray(haber)
+    
     
     return leng2
 
