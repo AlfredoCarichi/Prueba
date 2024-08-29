@@ -13,6 +13,7 @@ numpy = "*"
 ultralytics = "*"
 shapely = "*"
 imutils = "*"
+supervision = "*"
 
 [dev-packages]
 
