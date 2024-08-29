@@ -11,11 +11,10 @@ from datetime import datetime
 from getpass import getuser
 import supervision as sv
 from PIL import Image
-from PIL import ImageTk
+
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
-from tkinter import *
-from tkinter import filedialog
+
 
 
 from PIL import Image
