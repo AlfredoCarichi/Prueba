@@ -10,6 +10,7 @@ pandas = "*"
 openpyxl = "*"
 plotly = "*"
 numpy = "*"
+ultralytics = "*"
 
 [dev-packages]
 
