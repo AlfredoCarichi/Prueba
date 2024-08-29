@@ -29,43 +29,6 @@ import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
 import imutils
 
-#Librerias del segundo proceso
-import rasterio
-import geopandas as gpd
-import numpy as np
-from matplotlib import pyplot as plt
-import cv2
-from rasterio.features import rasterize
-from rasterio.windows import Window
-from rasterio.plot import show
-import os
-from shapely.geometry import box
-from shapely.ops import unary_union
-import json
-from shapely.geometry import shape
-from shapely.geometry import Polygon
-from shapely.geometry import MultiPolygon
-from shapely.ops import unary_union
-import shapely
-import math
-import pandas as pd
-from skimage import io
-from skimage.io import imsave
-from sklearn import model_selection
-import os
-import shutil
-import json
-import ast
-import numpy as np
-from tqdm import tqdm
-import pandas as  pd
-import seaborn as sns
-import fastai.vision as vision
-import xml.etree.ElementTree as ET
-import glob
-from shapely.geometry import Polygon
-from shutil import rmtree
-from PIL import Image
 
 
 
@@ -114,7 +77,7 @@ def deteccion(image):
     print(leng)
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
-    cv2.imshow("Resutados de la deteccion", haber)
+    #cv2.imshow("Resutados de la deteccion", haber)
     leng = len(alta)
     leng2 = str(leng)
     print("------------------------------------")
@@ -122,7 +85,7 @@ def deteccion(image):
     print(leng2 + " Anomalías detectadas")
     haber = imutils.resize(anotaciones,width=1024)
     #cv2.imshow("Resultados " + fecha, haber)
-    cv2.imwrite(filename, haber)
+    #cv2.imwrite(filename, haber)
     #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
     #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
     f.write("\n--------Fecha del analisis : " + fecha2 + " Anomalías: " + leng2)
@@ -163,7 +126,7 @@ def deteccion2(image):
     print(leng)
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
-    cv2.imshow("Resutados de la deteccion", haber)
+    #cv2.imshow("Resutados de la deteccion", haber)
     leng = len(alta)
     leng2 = str(leng)
     print("------------------------------------")
@@ -171,7 +134,7 @@ def deteccion2(image):
     print(leng2 + " Anomalías detectadas")
     haber = imutils.resize(anotaciones,width=1024)
     #cv2.imshow("Resultados " + fecha, haber)
-    cv2.imwrite(filename, haber)
+    #cv2.imwrite(filename, haber)
     #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
     #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
     f.write("\n--------Fecha del analisis : " + fecha2 + " Anomalías: " + leng2)
