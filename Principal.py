@@ -29,6 +29,7 @@ import imutils
 import gdown
 
 from functions import *
+#https://drive.google.com/file/d/1jbDLmw_ZWjDgUlVGrVde4h68U1edPzdT/view?usp=sharing
 url = "https://drive.google.com/uc?id=1jbDLmw_ZWjDgUlVGrVde4h68U1edPzdT"
 output = "Models25/bestNDVI"
 gdown.download(url, output)
