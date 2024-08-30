@@ -28,8 +28,7 @@ import matplotlib.pyplot as plt
 import imutils
 
 
-# Define some helper functions for downloading pretrained model
-# taken from this StackOverflow answer: https://stackoverflow.com/a/39225039
+
 import requests
 def download_file_from_google_drive(id, destination):
     URL = "https://docs.google.com/uc?export=download"
@@ -78,11 +77,11 @@ def load_model(self):
         self.net_G.to(device)
         self.net_G.eval()
         
-        # To free memory!
+        
         del f_checkpoint
         del checkpoint
         
-        #return model    
+          
 
 
 
@@ -107,13 +106,10 @@ def deteccion(image):
     
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
-    #cv2.imshow("Resutados de la deteccion", haber)
+    
     
     haber = imutils.resize(anotaciones,width=1024)
-    #cv2.imshow("Resultados " + fecha, haber)
-    #cv2.imwrite(filename, haber)
-    #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
-    #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
+    
     
     
     
@@ -134,15 +130,12 @@ def deteccion2(image):
     
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
-    #cv2.imshow("Resutados de la deteccion", haber)
+    
     leng = len(alta)
     leng2 = str(leng)
     
     haber = imutils.resize(anotaciones,width=1024)
-    #cv2.imshow("Resultados " + fecha, haber)
-    #cv2.imwrite(filename, haber)
-    #lblInfo2 = Label(root,text="Anomalías detectadas: " + leng2)
-    #lblInfo2.grid(column=0,row=2,padx=5,pady=5)
+  
     
     
     return leng2
