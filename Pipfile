@@ -15,6 +15,7 @@ shapely = "*"
 imutils = "*"
 supervision = "*"
 torch = "*"
+gdown = "*"
 
 [dev-packages]
 
