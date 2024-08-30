@@ -37,7 +37,7 @@ def deteccion(image):
    
     
     
-    model = YOLO("bestNDVI.pt")
+    model = YOLO("Models/bestNDVI.pt")
     imagen = image
     result = model(imagen,imgsz = 640, conf = 0.1, show_labels=False,show_conf=False)[0]
     resultados = model.predict(imagen, imgsz = 640, conf = 0.1)
