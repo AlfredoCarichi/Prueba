@@ -59,7 +59,7 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-parser = argparse.ArgumentParser(description='SKYAR')
+
 
 def load_model(self):
         cloud_model_location = "1jbDLmw_ZWjDgUlVGrVde4h68U1edPzdT"
