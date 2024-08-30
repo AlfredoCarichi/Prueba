@@ -1,7 +1,7 @@
 import streamlit as st
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
-import cv2
+
 import numpy as np
 import imutils
 import os
