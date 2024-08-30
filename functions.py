@@ -82,7 +82,7 @@ def load_model(self):
         del f_checkpoint
         del checkpoint
         
-#         return model    
+         return model    
 
 
 
