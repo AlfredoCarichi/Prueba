@@ -52,7 +52,7 @@ def main():
 
         st.markdown(deteccion2((image)) + ' anomalías de NDVI detectadas')
 
-        st.image(histograma(image_cv2))
+        
 
 
 if __name__ == "__main__":
