@@ -29,22 +29,12 @@ import imutils
 
 
 def deteccion(image):
-    user = getuser()
+    
     
 
     
 
-    now = datetime.now()
-    now2 = datetime.today()
-    fecha = str(now)
-    fecha2 = str(now2)
-
-    route = os.getcwd()
-    route2 = str(route)
-
-    directory = route2
-    os.chdir(directory)
-    filename = 'Imagen_Resultados.jpg'
+   
     
     
     model = YOLO("bestNDVI.pt")
@@ -53,17 +43,13 @@ def deteccion(image):
     resultados = model.predict(imagen, imgsz = 640, conf = 0.1)
     detections = sv.Detections.from_ultralytics(result)
     alta = detections[detections.confidence > 0.1]
-    print(resultados)
+    
     leng = len(resultados)
-    print(leng)
+    
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
     #cv2.imshow("Resutados de la deteccion", haber)
-    leng = len(alta)
-    leng2 = str(leng)
-    print("------------------------------------")
-    print("------------------------------------")
-    print(leng2 + " Anomalías detectadas")
+    
     haber = imutils.resize(anotaciones,width=1024)
     #cv2.imshow("Resultados " + fecha, haber)
     #cv2.imwrite(filename, haber)
@@ -77,23 +63,6 @@ def deteccion(image):
 
 
 def deteccion2(image):
-    user = getuser()
-    
-
-    
-
-    now = datetime.now()
-    now2 = datetime.today()
-    fecha = str(now)
-    fecha2 = str(now2)
-
-    route = os.getcwd()
-    route2 = str(route)
-
-    directory = route2
-    os.chdir(directory)
-    filename = 'Imagen_Resultados.jpg'
-    
     
     model = YOLO("Models/bestNDVI.pt")
     imagen = image
@@ -101,17 +70,15 @@ def deteccion2(image):
     resultados = model.predict(imagen, imgsz = 640, conf = 0.1)
     detections = sv.Detections.from_ultralytics(result)
     alta = detections[detections.confidence > 0.1]
-    print(resultados)
+    
     leng = len(resultados)
-    print(leng)
+    
     anotaciones = resultados[0].plot()
     haber = imutils.resize(anotaciones,width=640)
     #cv2.imshow("Resutados de la deteccion", haber)
     leng = len(alta)
     leng2 = str(leng)
-    print("------------------------------------")
-    print("------------------------------------")
-    print(leng2 + " Anomalías detectadas")
+    
     haber = imutils.resize(anotaciones,width=1024)
     #cv2.imshow("Resultados " + fecha, haber)
     #cv2.imwrite(filename, haber)
