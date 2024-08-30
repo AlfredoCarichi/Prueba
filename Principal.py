@@ -26,9 +26,12 @@ from ultralytics.solutions import object_counter
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
 import imutils
-
+import gdown
 
 from functions import *
+url = "https://drive.google.com/uc?id=1jbDLmw_ZWjDgUlVGrVde4h68U1edPzdT"
+output = "Models25/bestNDVI"
+gdown.download(url, output)
 
 def main():
     
