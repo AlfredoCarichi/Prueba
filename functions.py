@@ -96,7 +96,7 @@ def deteccion(image):
    
     
     
-    model = YOLO("/mount/src/prueba/Models/bestNDVI.pt")
+    model = YOLO("Models25/bestJAJA.PT")
     imagen = image
     result = model(imagen,imgsz = 640, conf = 0.1, show_labels=False,show_conf=False)[0]
     resultados = model.predict(imagen, imgsz = 640, conf = 0.1)
@@ -123,7 +123,7 @@ def deteccion(image):
 
 def deteccion2(image):
     
-    model = YOLO("/mount/src/prueba/Models/bestNDVI.pt")
+    model = YOLO("Models25/bestJAJA.PT")
     imagen = image
     result = model(imagen,imgsz = 640, conf = 0.1, show_labels=False,show_conf=False)[0]
     resultados = model.predict(imagen, imgsz = 640, conf = 0.1)
